@@ -1,19 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Cadastro</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Cadastro 
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-<!-- with name set -->
-<ion-item>
-  <ion-label>Todo</ion-label>
-  <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
-</ion-item>
 
-<!-- or with standalone set to true -->
-<ion-item>
-  <ion-label>Todo</ion-label>
-  <ion-input type="text" [(ngModel)]="todo.title" [ngModelOptions]="{standalone: true}"></ion-input>
-</ion-item>
-<ion-content>
+<ion-content [fullscreen]="true">
+  <form #f="ngForm" (ngSubmit)="loginForm(f)" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input [(ngModel)]="data.username" #nameCtrl="ngModel" name="username" required></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!nameCtrl.valid && nameCtrl.touched">
+        <ion-text color="danger">Insira um nome</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="data.password" #passwordCtrl="ngModel" name="password" required>
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched">
+        <ion-text color="danger">insira uma senha</ion-text>
+      </ion-item>
+      <ion-toggle [(ngModel)]="data.switch" #switchCtrl="ngModel" name="switch"></ion-toggle><p>Receber email com novidades? {{f.value.switch ? 'Ligado':'Desligado'}}</p>
+      <ion-button type="submit" expand="block" fill="outline" [disabled]="!f.valid">
+        Login
+      </ion-button>
+    </ion-list>
+
+    <div class="ion-padding" *ngIf="f.valid">
+      Form username: {{ f.value.username }}<br />
+      Form password: {{ f.value.password }}
+    </div> 
+  </form>
 
 </ion-content>

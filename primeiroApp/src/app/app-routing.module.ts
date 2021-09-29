@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'cadastro',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
+  {
+    path: 'calcular-nota',
+    loadChildren: () => import('./calcular-nota/calcular-nota.module').then( m => m.CalcularNotaPageModule)
+  },
 
 ];
 

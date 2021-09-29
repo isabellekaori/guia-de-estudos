@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Administre suas matérias e notas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-text color="dark"><H2>Insira sua matéria e nota</H2><br></ion-text>
+
+  <div id="container">
+    <input type="text" [(ngModel)]="input" placeholder="Digite a matéria">
+    <input type="text" [(ngModel)]="inputNota" placeholder="Digite a nota">
+    <button (click)="inserir(input, inputNota)">Inserir matéria</button>
+
+    <ul *ngFor="let materia of lista">
+      <li>Matéria: {{materia.nome}} Nota: {{materia.nota}} Concluída <input type="checkbox" [(ngModel)]="materia.concluido" (change)="concluir()"
+          value="{{materia.concluido}}"> </li>
+    </ul>
+    <p>Total: {{materiasTotais}}</p>
+    <p>Concluídas: {{materiasConcluidas}}</p>
+
+    <h1>Seu aprendizado é {{tarefasConcluidas}}</h1>
+  
+    <ion-card color="danger" *ngIf="materiasConcluidas <= 0; else recuperar">
+      <ion-card-content>
+        Você não possui nenhuma matéria concluída ainda :(
+      </ion-card-content>
+    </ion-card>
+
+    <ng-template #recuperar>
+      <ion-card color="warning" *ngIf="materiasConcluidas <= 1 ; else aprovado">
+        <ion-card-content>
+          Você está indo bem! 
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+
+    <ng-template #aprovado>
+      <ion-card color="success" *ngIf="materiasConcluidas > 1; else honras">
+        <ion-card-content>
+          Você está aprovadíssimo continue assim!
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+  </div>
+</ion-content>

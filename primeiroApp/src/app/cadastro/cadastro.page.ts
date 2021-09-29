@@ -1,23 +1,19 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 @Component({
-  template: `
-    <form (ngSubmit)="logForm()">
-      <ion-item>
-        <ion-label>Todo</ion-label>
-        <ion-input type="text" [(ngModel)]="todo.title" name="title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea [(ngModel)]="todo.description" name="description"></ion-textarea>
-      </ion-item>
-      <button ion-button type="submit" block>Add Todo</button>
-    </form>
-  `,
+  selector: 'app-cadastro',
+  templateUrl: 'cadastro.page.html',
+  styleUrls: ['cadastro.page.scss'],
 })
 export class CadastroPage {
-  todo = {}
-  logForm() {
-    console.log(this.todo)
+  data = { username:'', password: '', switch: true};
+  constructor() { }
+  
+  loginForm(form: NgForm) {
+    console.log(form);
   }
 
+  public switch = true;
 }
+

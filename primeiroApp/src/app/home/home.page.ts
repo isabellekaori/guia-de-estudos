@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+interface IPessoa{
+  nome: string;
+  sobrenome: string;
+}
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +11,6 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public texto = "Boa noite";
 
 }

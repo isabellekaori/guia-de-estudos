@@ -18,6 +18,22 @@ const routes: Routes = [
     path: 'calcular-nota',
     loadChildren: () => import('./calcular-nota/calcular-nota.module').then( m => m.CalcularNotaPageModule)
   },
+  {
+    path: 'materias',
+    loadChildren: () => import('./materias/materias.module').then( m => m.MateriasPageModule)
+  },
+  {
+    path: 'redacao',
+    loadChildren: () => import('./redacao/redacao.module').then( m => m.RedacaoPageModule)
+  },
+  {
+    path: 'ingles',
+    loadChildren: () => import('./ingles/ingles.module').then( m => m.InglesPageModule)
+  },
+  {
+    path: 'tecnologia',
+    loadChildren: () => import('./tecnologia/tecnologia.module').then( m => m.TecnologiaPageModule)
+  },
 
 ];
 

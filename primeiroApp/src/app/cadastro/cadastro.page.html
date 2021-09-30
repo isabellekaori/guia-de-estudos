@@ -30,11 +30,6 @@
         Login
       </ion-button>
     </ion-list>
-
-    <div class="ion-padding" *ngIf="f.valid">
-      Form username: {{ f.value.username }}<br />
-      Form password: {{ f.value.password }}
-    </div> 
   </form>
-
+  <ion-button routerLink="/home" color="dark" fill="outline" expand="block">Voltar para Home</ion-button>
 </ion-content>

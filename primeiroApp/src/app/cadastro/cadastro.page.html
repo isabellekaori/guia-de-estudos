@@ -11,7 +11,7 @@
     <ion-list>
       <ion-item>
         <ion-label>Username</ion-label>
-        <ion-input [(ngModel)]="data.username" #nameCtrl="ngModel" name="username" required></ion-input>
+        <ion-input [(ngModel)]="pessoa.nome" #nameCtrl="ngModel" name="nome" required></ion-input>
       </ion-item>
       <ion-item *ngIf="!nameCtrl.valid && nameCtrl.touched">
         <ion-text color="danger">Insira um nome</ion-text>
@@ -19,7 +19,7 @@
 
       <ion-item>
         <ion-label>Password</ion-label>
-        <ion-input type="password" [(ngModel)]="data.password" #passwordCtrl="ngModel" name="password" required>
+        <ion-input type="password" [(ngModel)]="pessoa.senha" #passwordCtrl="ngModel" name="senha" required>
         </ion-input>
       </ion-item>
       <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched">

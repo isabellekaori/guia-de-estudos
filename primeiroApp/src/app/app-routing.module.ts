@@ -34,6 +34,10 @@ const routes: Routes = [
     path: 'tecnologia',
     loadChildren: () => import('./tecnologia/tecnologia.module').then( m => m.TecnologiaPageModule)
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
 
 ];
 

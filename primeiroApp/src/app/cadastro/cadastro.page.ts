@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import iPessoa from '../interfaces/iPessoa';
-import { DadosService } from '../dados.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,12 +13,10 @@ export class CadastroPage {
   public id: number;
   public dados: iPessoa[];
   public pessoa: iPessoa;
-  private service: DadosService;
   
   //pessoa = { nome:'', senha: '', switch: true};
-  constructor(route: ActivatedRoute, dadosService: DadosService) { 
-    this.rota = route;
-    this.service = dadosService;
+  constructor() { 
+
   }
   
   loginForm(form: NgForm) {

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { EditMateriasPageRoutingModule } from './edit-materias-routing.module';
 
-import { DashboardPage } from './dashboard.page';
+import { EditMateriasPage } from './edit-materias.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardPageRoutingModule
+    EditMateriasPageRoutingModule
   ],
-  declarations: [DashboardPage]
+  declarations: [EditMateriasPage]
 })
-export class DashboardPageModule {}
+export class EditMateriasPageModule {}

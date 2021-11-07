@@ -1,22 +1,32 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Matérias</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Contatos
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item button routerLink="/redacao" color="primary">
-      <ion-label>Redação</ion-label>
-    </ion-item>
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
 
-    <ion-item button routerLink="/ingles" color="warning">
-      <ion-label>Inglês</ion-label>
-    </ion-item>
+  <div id="container">
+    <ion-list>
+      <ion-item *ngFor="let pessoa of dados">
+        <ion-icon color="success" name="person-sharp"></ion-icon>
+        <ion-label [routerLink]="['/detalhes', materia.id]">{{materia.nome}}</ion-label>
+        <ion-label [routerLink]="['/detalhes', materia.id]">{{materia.data}}</ion-label>
+        <ion-icon (click)="remover(pessoa.id)" color="danger" name="close-sharp"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
 
-    <ion-item button routerLink="/tecnologia" color="success">
-      <ion-label>Tecnologia</ion-label>
-    </ion-item>
-  </ion-list>
-  <ion-button routerLink="/home" color="dark" fill="outline" expand="block">Voltar para Home</ion-button>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="success" routerLink="/edit-materias" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

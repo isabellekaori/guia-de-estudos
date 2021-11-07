@@ -10,7 +10,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'cadastro',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
@@ -23,22 +24,13 @@ const routes: Routes = [
     loadChildren: () => import('./materias/materias.module').then( m => m.MateriasPageModule)
   },
   {
-    path: 'redacao',
-    loadChildren: () => import('./redacao/redacao.module').then( m => m.RedacaoPageModule)
+    path: 'edit-materias',
+    loadChildren: () => import('./edit-materias/edit-materias.module').then( m => m.EditMateriasPageModule)
   },
   {
-    path: 'ingles',
-    loadChildren: () => import('./ingles/ingles.module').then( m => m.InglesPageModule)
-  },
-  {
-    path: 'tecnologia',
-    loadChildren: () => import('./tecnologia/tecnologia.module').then( m => m.TecnologiaPageModule)
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
-
+    path: 'detalhes/:id',
+    loadChildren: () => import('./detalhes/detalhes.module').then( m => m.DetalhesPageModule)
+  }
 ];
 
 @NgModule({

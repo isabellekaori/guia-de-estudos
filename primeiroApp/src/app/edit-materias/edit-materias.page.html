@@ -1,11 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Nova Matéria
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
 <div class="content">
   <ion-label>Nome</ion-label>
-  <ion-input [(ngModel)]="nome" placeholder="Ex.: José"></ion-input>
-  <ion-label>Data</ion-label>
-  <ion-input [(ngModel)]="data" placeholder="Ex.: 01/02/2002"></ion-input>
-  <ion-label>Obs</ion-label>
-  <ion-input [(ngModel)]="observacao" placeholder="Informações adicionais"></ion-input>
-
-  <ion-button color="success" (click)="inserir()">Adicionar</ion-button>
+  <ion-input [(ngModel)]="nome" placeholder="Ex.: Matemática"></ion-input>
+  <ion-label>Data Inicio</ion-label>
+  <ion-input [(ngModel)]="data" placeholder="Ex.: 01/02/2020"></ion-input>
+  <ion-label>Status</ion-label>
+  <ion-input [(ngModel)]="status" placeholder="Ex: Concluida"></ion-input>
+  <ion-button color="danger" (click)="inserir()">Adicionar</ion-button>
   <ion-button (click)="voltar()">voltar</ion-button>
 </div>
+</ion-content>

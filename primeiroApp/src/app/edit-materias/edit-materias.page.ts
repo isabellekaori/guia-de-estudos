@@ -9,7 +9,7 @@ import { DadoService } from '../dado.service';
 export class EditMateriasPage  {
   public nome: string;
   public data: Date;
-  public observaçao: string;
+  public status: string;
   public servico: DadoService;
 
   constructor(servico: DadoService) {
@@ -24,7 +24,7 @@ export class EditMateriasPage  {
     this.servico.salvar({
       nome: this.nome,
       data: this.data,
-      observacao: this.observaçao
+      status: this.status
     });
 
     this.voltar();

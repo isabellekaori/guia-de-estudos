@@ -26,6 +26,4 @@ export class DetalhesPage implements OnInit {
     this.id = Number(this.rota.snapshot.paramMap.get('id'));
     this.materia = this.dados.find(p => p.id === this.id);
   }
-
-
 }
